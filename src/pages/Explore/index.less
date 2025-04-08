@@ -1,0 +1,1625 @@
+.explore-container {
+  // position: relative;
+  // z-index: 2;
+  width: 100%;
+  padding: 10.781vw 0 7.292vw;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1500px;
+    width: 38.49vw;
+    height: 64.792vw;
+    background: url('../../assets/images/home/shadow_left.png');
+    background-size: 100% 100%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 702px;
+    width: 34.688vw;
+    height: 58.438vw;
+    background: url('../../assets/images/home/shadow_right.png');
+    background-size: 100% 100%;
+  }
+
+  > .shadow {
+    position: absolute;
+    right: 0;
+    top: 2350px;
+    width: 34.688vw;
+    // height: 58.438vw; fixing the banner picture in explorer page
+    height: auto;
+    background: url('../../assets/images/home/shadow_right.png');
+    background-size: 100% 100%;
+    opacity: 0.3;
+  }
+
+  :global {
+    #node:checked ~ nav::after {
+      transform: translateX(0.833vw);
+    }
+
+    #points:checked ~ nav::after {
+      transform: translateX(20.833vw);
+    }
+  }
+
+  .slogan {
+    // margin-top: 3.021vw;
+    width: 100%;
+    height: 30.313vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background-image: url('../../assets/images/explore/slogan_bg.png');
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: left;
+    // transition: 0.5s all ease;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 30.313vw;
+      background-image: url('../../assets/images/explore/slogan_bg.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left;
+      transition: 0.5s all ease;
+    }
+
+    .left {
+      width: 54.427vw;
+      height: 100%;
+      padding: 3.906vw 0 0 6.25vw;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 10;
+
+      h1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 4.167vw;
+        line-height: 4.479vw;
+        color: #ffffff;
+        text-shadow: 0vw 0.208vw 2.604vw rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    .right {
+      flex: 1;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+
+      .shadow {
+        position: absolute;
+        width: 10.417vw;
+        height: 100%;
+        left: -2.604vw;
+        top: 0;
+        z-index: 2;
+        display: block;
+        background: linear-gradient(
+          90deg,
+          #000000 38.21%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .user-credits-info {
+        display: flex;
+        align-items: center;
+        padding: 0 0.833vw;
+        gap: 0.521vw;
+        min-width: 15.417vw;
+        height: 3.125vw;
+        border-radius: 3.177vw;
+        overflow: hidden;
+        backdrop-filter: blur(44.5px);
+        border: 0.052vw solid transparent;
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        background-image: linear-gradient(to right, #000, #000),
+          linear-gradient(90deg, #73d5f4 0%, #244955 100%);
+        position: relative;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background: radial-gradient(
+              31.36% 94.64% at 106.21% -52.68%,
+              #73d5f4 0%,
+              rgba(115, 213, 244, 0) 100%
+            ),
+            rgba(0, 0, 0, 0.005);
+        }
+
+        i {
+          width: 1.875vw;
+          height: 1.875vw;
+          background: url('../../assets/images/explore/avatar.png') no-repeat;
+          background-size: 100% 100%;
+          border-radius: 50%;
+        }
+
+        span {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 300;
+          font-size: 0.833vw;
+          line-height: 1.25vw;
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .points {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          color: #73d5f4;
+        }
+      }
+    }
+  }
+
+  .slogan.node {
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: right;
+
+    &::after {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right;
+    }
+
+    .right {
+      .shadow {
+        display: none;
+        opacity: 0;
+      }
+    }
+  }
+
+  .nav-wrapper {
+    input[type='radio'] {
+      display: none;
+    }
+
+    nav {
+      width: 41.667vw;
+      height: 5vw;
+      padding: 0.833vw;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(0.521vw);
+      border-radius: 5.208vw;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      .shadow-left {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        width: 13.75vw;
+        height: 5.313vw;
+        left: calc(50% - 13.75vw / 2 - 13.542vw);
+        top: calc(50% - 5.313vw / 2 + 2.656vw);
+        background: #fcc7bc;
+        opacity: 0.2;
+        filter: blur(4.977vw);
+      }
+
+      .shadow-right {
+        content: '';
+        z-index: 1;
+        position: absolute;
+        width: 18.542vw;
+        height: 7.188vw;
+        left: calc(50% - 18.542vw / 2 + 11.146vw);
+        top: calc(50% - 7.188vw / 2 - 0.417vw);
+        background: #86e8ff;
+        opacity: 0.2;
+        filter: blur(4.977vw);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0.833vw;
+        left: 0;
+        transform: translateX(0.833vw);
+        display: block;
+        width: 20vw;
+        height: 3.333vw;
+        background: #ffffff;
+        box-shadow: 0vw 0vw 0.625vw rgba(255, 255, 255, 0.25);
+        border-radius: 1.667vw;
+        transition: 0.5s all cubic-bezier(0.42, 0, 0.68, 1.35);
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        height: 3.333vw;
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+
+        li {
+          width: 20vw;
+          height: 100%;
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1.25vw;
+          line-height: 1.875vw;
+          color: #fff;
+          background: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+          }
+        }
+
+        li.active {
+          color: #000000;
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    width: 79.167vw;
+    margin: 0 auto;
+
+    h1 {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 2.708vw;
+      line-height: 4.063vw;
+      /* identical to box height */
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 0vw 0vw 0.521vw rgba(255, 255, 255, 0.25);
+      margin-bottom: 4.167vw;
+    }
+  }
+
+  .node-wrapper {
+    .node-running {
+      margin-top: 6.25vw;
+
+      .content {
+        display: flex;
+        justify-content: space-between;
+
+        :global {
+          .ant-statistic {
+            width: 25vw;
+            height: 16.042vw;
+            background: url('../../assets/images/explore/statistic_bg.png');
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 0.208vw;
+            padding-bottom: 4.063vw;
+
+            .ant-statistic-content {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 3.75vw;
+              line-height: 5.625vw;
+              /* identical to box height */
+              text-align: center;
+              background: linear-gradient(
+                90deg,
+                #ffffff 0%,
+                #fcc7bc 33.44%,
+                #73d5f4 100%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              text-fill-color: transparent;
+              text-shadow: 0vw 0vw 0.594vw rgba(255, 255, 255, 0.1);
+            }
+
+            .ant-statistic-title {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 1.25vw;
+              line-height: 1.406vw;
+              /* identical to box height, or 112% */
+              text-align: center;
+              letter-spacing: 0.035vw;
+              color: #ffffff;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+
+    .node-overview {
+      margin-top: 8.333vw;
+
+      .content {
+        width: 100%;
+        height: 42.917vw;
+        padding: 3.229vw;
+        padding-left: 0.521vw;
+        display: flex;
+        align-items: center;
+        background: url('../../assets/images/explore/node_overview_bg.png');
+        background-size: 100% 100%;
+
+        .echart-wrapper {
+          flex: 1;
+          height: 100%;
+        }
+
+        .device-wrapper {
+          width: 38.854vw;
+          height: 100%;
+          flex-shrink: 0;
+          padding: 3.646vw 3.906vw 0;
+
+          .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 2.5vw;
+
+            .th {
+              font-family: 'PingFang SC';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 1.458vw;
+              line-height: 2.5vw;
+              color: rgba(255, 255, 255, 0.5);
+            }
+          }
+
+          .body {
+            margin-top: 3.333vw;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5vw;
+
+            .td {
+              height: 1.875vw;
+              display: flex;
+              align-items: center;
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 1.25vw;
+              line-height: 1.875vw;
+              color: #ffffff;
+
+              &::before {
+                content: '';
+                display: block;
+                width: 0.833vw;
+                height: 0.833vw;
+                border-radius: 50%;
+                background: var(--color);
+                opacity: var(--opacity);
+                margin-right: 1.042vw;
+              }
+
+              i {
+                flex-shrink: 0;
+                margin-right: 0.625vw;
+              }
+
+              .nvidia {
+                font-size: 0.833vw;
+                color: #76b900;
+              }
+
+              .macos {
+                font-size: 1.302vw;
+              }
+
+              .name {
+                flex: 1;
+              }
+
+              .value {
+                width: 7.552vw;
+                text-align: right;
+                flex-shrink: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .node-points {
+      margin-top: 7.5vw;
+
+      .filters {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.083vw;
+        margin-top: 4.167vw;
+
+        > div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 8.333vw;
+          height: 3.333vw;
+          // background: rgba(255, 255, 255, 0.07);
+          backdrop-filter: blur(2.318vw);
+          border-radius: 3.177vw;
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.146vw;
+          line-height: 1.719vw;
+          color: #ffffff;
+          cursor: pointer;
+          border: 0.052vw solid transparent;
+          background-clip: padding-box, border-box;
+          background-origin: padding-box, border-box;
+          background-image: linear-gradient(to right, #141414, #141414),
+            linear-gradient(
+              112.96deg,
+              rgba(255, 255, 255, 0.4) 15.73%,
+              rgba(255, 255, 255, 0) 78.61%
+            );
+          position: relative;
+          overflow: hidden;
+        }
+
+        .active {
+          font-weight: 700;
+          background: #ffffff;
+          color: #000000;
+        }
+      }
+
+      .device-list {
+        font-size: 0.625vw;
+        margin-top: 6.25vw;
+        position: relative;
+
+        :global {
+          .ant-list-items {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4.117vw;
+
+            .ant-list-item {
+              width: 12.5vw;
+              height: 15.521vw;
+              background: url('../../assets/images/explore/device_item_bg.png');
+              background-size: 100% 100%;
+              backdrop-filter: blur(0.521vw);
+              /* Note: backdrop-filter has minimal browser support */
+              border-radius: 1.042vw;
+              padding-top: 2.083vw;
+              transition: all 0.3s;
+
+              &:hover {
+                filter: drop-shadow(0px 0px 80px rgba(252, 199, 188, 0.2));
+                background: url('../../assets/images/explore/device_item_active_bg.png');
+                background-size: 100% 100%;
+                transition: all 0.3s;
+              }
+            }
+          }
+        }
+
+        .device-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .icon {
+            width: 6.25vw;
+            height: 6.25vw;
+            background: #0a0a0a;
+            border-radius: 0.625vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .nvidia {
+              font-size: 2.917vw;
+              color: #76b900;
+            }
+
+            .macos {
+              font-size: 3.75vw;
+            }
+
+            .cpu {
+              font-size: 3.125vw;
+            }
+          }
+
+          .name {
+            margin-top: 2.083vw;
+            font-family: 'PingFang SC';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 0.938vw;
+            line-height: 1.302vw;
+            color: #ffffff;
+          }
+
+          .price {
+            margin-top: 0.417vw;
+            font-family: 'PingFang SC';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 0.938vw;
+            line-height: 1.302vw;
+            color: #73d5f4;
+          }
+        }
+
+        .load-more {
+          position: absolute;
+          width: 100%;
+          height: 15.521vw;
+          background: linear-gradient(
+            0deg,
+            #000000 38.21%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          bottom: 0;
+          left: 0;
+          padding-top: 11.458vw;
+          text-align: center;
+
+          span {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.042vw;
+            line-height: 1.563vw;
+            text-align: center;
+            color: #73d5f4;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .points-wrapper {
+    .ranking-wrapper {
+      margin-top: 6.25vw;
+
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25vw;
+
+        .ranking-info {
+          width: 27.083vw;
+          height: 26.25vw;
+          padding: 0 1.875vw;
+
+          .title {
+            width: 100%;
+            height: 7.083vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 2.5vw;
+              line-height: 3.75vw;
+              text-align: center;
+              background: linear-gradient(
+                90deg,
+                #ffffff 0%,
+                #fcc7bc 33.44%,
+                #73d5f4 100%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              text-fill-color: transparent;
+              text-shadow: 0vw 0vw 0.594vw rgba(255, 255, 255, 0.1);
+            }
+          }
+
+          .list {
+            margin-top: 2.083vw;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25vw;
+
+            > div {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              gap: 0.833vw;
+
+              img {
+                width: 1.875vw;
+                height: 1.875vw;
+                flex-shrink: 0;
+              }
+
+              span {
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.25vw;
+                line-height: 1.875vw;
+                color: #ffffff;
+                opacity: 0.5;
+              }
+
+              .username {
+                width: 100%;
+              }
+
+              .total {
+                min-width: 8.281vw;
+                flex-shrink: 0;
+                text-align: right;
+              }
+            }
+
+            .ranking-0 {
+              flex-direction: column;
+              gap: 0;
+              margin-bottom: 2.292vw;
+
+              img {
+                width: 3.75vw;
+                height: 3.75vw;
+              }
+
+              .name {
+                margin-top: 0.417vw;
+              }
+
+              .total {
+                font-weight: 500;
+                font-size: 1.458vw;
+                line-height: 2.188vw;
+                opacity: 1;
+                margin-top: 0.104vw;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .table-wrapper {
+      margin-top: 8.333vw;
+      position: relative;
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 2.708vw;
+          line-height: 4.063vw;
+          color: #ffffff;
+        }
+
+        .total {
+          display: flex;
+          align-items: center;
+          width: 31.51vw;
+          height: 6.927vw;
+          padding-left: 2.292vw;
+          padding-bottom: 1.458vw;
+          background: url('../../assets/images/explore/total_bg.png');
+          background-size: 100% 100%;
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+
+          &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            top: 0;
+            height: calc(100% - 1.458vw);
+            width: 160px;
+            background: url('../../assets/images/explore/nodes_bg.png');
+            background-size: 100% 100%;
+          }
+
+          > div {
+            gap: 1.458vw;
+          }
+
+          img {
+            width: 5.208vw;
+            height: 1.927vw;
+          }
+
+          .name {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.25vw;
+            line-height: 1.875vw;
+            letter-spacing: 0.029vw;
+            color: #ffffff;
+            opacity: 0.7;
+            text-shadow: 0vw 0vw 0.594vw rgba(255, 255, 255, 0.1);
+          }
+
+          .value {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 2.5vw;
+            line-height: 3.75vw;
+            background: linear-gradient(
+              90deg,
+              #ffffff 0%,
+              #fcc7bc 33.44%,
+              #73d5f4 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-shadow: 0vw 0vw 0.594vw rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        top: -1.979vw;
+        width: 100%;
+        height: 42.396vw;
+        padding: 1.458vw 2.917vw;
+        background: url('../../assets/images/explore/table_bg.png');
+        background-size: 100% 100%;
+
+        .tx-hash {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .status {
+            width: 24px;
+            height: 24px;
+            background: url('../../assets/images/icons/success.png');
+            background-size: 100% 100%;
+          }
+        }
+
+        :global {
+          .ant-table-wrapper {
+            width: 100%;
+
+            .ant-table {
+              background: transparent;
+              font-family: 'PingFang SC';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1.042vw;
+              line-height: 1.458vw;
+              text-align: center;
+              color: #ffffff;
+
+              .ant-table-thead > tr > th {
+                background: transparent;
+                font-family: 'PingFang SC';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 1.042vw;
+                line-height: 1.458vw;
+                color: rgba(255, 255, 255, 0.5);
+
+                &::before {
+                  display: none;
+                }
+              }
+
+              .ant-table-tbody > .ant-table-placeholder {
+                > .ant-table-cell {
+                  &:hover {
+                    background-color: transparent;
+                  }
+
+                  .ant-empty {
+                    min-height: 30.729vw;
+                  }
+                }
+              }
+
+              .ant-table-thead > tr > th,
+              .ant-table-tbody > tr > td,
+              .ant-table tfoot > tr > th,
+              .ant-table tfoot > tr > td {
+                padding: 1.458vw 1.042vw;
+                border-bottom: none;
+              }
+
+              .ant-table-thead > tr > th {
+                border-bottom: none;
+              }
+
+              .ant-table-cell-row-hover {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+
+      .pagination-wrapper {
+        width: 100%;
+        margin-top: 2.448vw;
+        height: 2.5vw;
+
+        :global {
+          .ant-pagination {
+            display: flex;
+            align-items: center;
+            gap: 0.417vw;
+            justify-content: center;
+            margin-bottom: 0;
+
+            .ant-pagination-prev,
+            .ant-pagination-next,
+            .ant-pagination-item {
+              width: 2.5vw;
+              height: 2.5vw;
+              background: rgba(249, 250, 251, 0.15);
+              border-radius: 0.313vw;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .ant-pagination-next,
+            .ant-pagination-prev {
+              .ant-pagination-item-link {
+                color: rgba(255, 255, 255, 0.64);
+                border: none;
+                font-size: 0.781vw;
+              }
+            }
+
+            .ant-pagination-item {
+              border: none;
+
+              a {
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.094vw;
+                line-height: 1.719vw;
+                color: #ffffff;
+              }
+
+              &:hover {
+                border: none;
+              }
+            }
+
+            .ant-pagination-item-active {
+              background: linear-gradient(
+                148.03deg,
+                #fcc7bc -6.41%,
+                #73d5f4 99.6%
+              );
+
+              a {
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1.094vw;
+                line-height: 1.719vw;
+                color: #333333;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .explore-container {
+    padding: 42.667vw 0 17.067vw;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1245px;
+      width: 38.49vw;
+      height: 64.792vw;
+      background: url('../../assets/images/home/shadow_left.png');
+      background-size: 100% 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 400px;
+      width: 232px;
+      height: 435px;
+      background: url('../../assets/images/home/shadow_right.png');
+      background-size: 100% 100%;
+    }
+
+    > .shadow {
+      position: absolute;
+      right: 0;
+      top: 2350px;
+      width: 61.867vw;
+      height: 116vw;
+      background: url('../../assets/images/home/shadow_right.png');
+      background-size: 100% 100%;
+      opacity: 0.3;
+    }
+
+    :global {
+      #node:checked ~ nav::after {
+        transform: translateX(1.067vw);
+      }
+
+      #points:checked ~ nav::after {
+        transform: translateX(38.667vw);
+      }
+    }
+
+    .slogan {
+      // margin-top: 22.667vw;
+      height: 49.867vw;
+      // background: none;
+      position: relative;
+
+      &::after {
+        height: 49.867vw;
+        opacity: 0;
+        background-position: center;
+        transition: 0.5s all ease;
+      }
+
+      .left {
+        width: 100%;
+        height: 100%;
+        padding: 4.267vw 6.4vw;
+        flex-shrink: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+
+        h1 {
+          font-size: 7.467vw;
+          line-height: 10.667vw;
+          text-shadow: 0vw 1.067vw 8vw rgba(0, 0, 0, 0.8);
+        }
+      }
+
+      .right {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+
+        .shadow {
+          position: absolute;
+          width: 32vw;
+          height: 100%;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          opacity: 1;
+          background: linear-gradient(
+            90deg,
+            #000000 38.21%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          transition: 0.5s all;
+        }
+
+        .user-credits-info {
+          padding: 0 2.133vw;
+          gap: 1.333vw;
+          min-width: 29.067vw;
+          height: 8vw;
+          backdrop-filter: blur(5.933vw);
+          border-radius: 8.267vw;
+
+          i {
+            width: 4.8vw;
+            height: 4.8vw;
+          }
+
+          span {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 2.133vw;
+            line-height: 3.2vw;
+            color: rgba(255, 255, 255, 0.9);
+          }
+
+          .points {
+            font-size: 2.133vw;
+            line-height: 3.2vw;
+          }
+        }
+      }
+    }
+
+    .slogan.node {
+      // background-image: url('../../assets/images/explore/slogan_bg.png');
+      // background-repeat: no-repeat;
+      // background-size: 100% 100%;
+      // background-position: left;
+      &::after {
+        opacity: 1;
+        background-image: url('../../assets/images/explore/slogan_bg.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+      }
+
+      .right {
+        .shadow {
+          opacity: 0;
+        }
+      }
+    }
+
+    .nav-wrapper {
+      nav {
+        width: 77.333vw;
+        height: 10.667vw;
+        padding: 1.067vw;
+        backdrop-filter: blur(0.97vw);
+        border-radius: 9.7vw;
+
+        .shadow-left {
+          width: 25.608vw;
+          height: 9.893vw;
+          left: calc(50% - 25.608vw / 2 - 25.219vw);
+          top: calc(50% - 9.893vw / 2 + 4.269vw);
+          background: #fcc7bc;
+          opacity: 0.2;
+          filter: blur(9.268vw);
+        }
+
+        .shadow-right {
+          width: 34.531vw;
+          height: 13.387vw;
+          left: calc(50% - 34.531vw / 2 + 20.757vw);
+          top: calc(50% - 13.387vw / 2 - 1.453vw);
+          background: #86e8ff;
+          opacity: 0.2;
+          filter: blur(9.268vw);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 1.067vw;
+          left: 0;
+          transform: translateX(1.067vw);
+          display: block;
+          width: 37.6vw;
+          height: 8.533vw;
+          background: #ffffff;
+          box-shadow: 0vw 0vw 1.164vw rgba(255, 255, 255, 0.25);
+          border-radius: 5.333vw;
+          transition: 0.5s all cubic-bezier(0.42, 0, 0.68, 1.35);
+        }
+
+        ul {
+          height: 8.533vw;
+
+          li {
+            width: 37.6vw;
+            font-size: 4.267vw;
+            line-height: 6.4vw;
+          }
+        }
+      }
+    }
+
+    .wrapper {
+      width: 87.2vw;
+
+      h1 {
+        font-weight: 700;
+        font-size: 4.267vw;
+        line-height: 6.4vw;
+        text-shadow: 0vw 0vw 2.667vw rgba(255, 255, 255, 0.25);
+        margin-bottom: 9.6vw;
+      }
+    }
+
+    .node-wrapper {
+      .node-running {
+        margin-top: 14.133vw;
+
+        .content {
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 6.4vw;
+
+          :global {
+            .ant-statistic {
+              width: 100%;
+              height: 41.333vw;
+              gap: 0;
+              padding-bottom: 10.933vw;
+
+              .ant-statistic-content {
+                font-size: 10.667vw;
+                line-height: 16vw;
+                text-shadow: 0vw 0vw 1.923vw rgba(255, 255, 255, 0.1);
+              }
+
+              .ant-statistic-title {
+                font-size: 3.733vw;
+                line-height: 5.6vw;
+                letter-spacing: 0.112vw;
+              }
+            }
+          }
+        }
+      }
+
+      .node-overview {
+        margin-top: 17.067vw;
+
+        .content {
+          height: 162.4vw;
+          padding: 0;
+          padding-left: 0;
+          padding-bottom: 4.267vw;
+          flex-direction: column;
+          background: url('../../assets/images/explore/node_overview_android_bg.png');
+          background-size: 100% 100%;
+
+          .echart-wrapper {
+            width: 100%;
+            height: auto;
+            flex: 1;
+          }
+
+          .device-wrapper {
+            width: 78.667vw;
+            height: 72.533vw;
+            margin: 0 auto;
+            flex-shrink: 0;
+            padding: 4.267vw;
+
+            .header {
+              height: 5.6vw;
+
+              .th {
+                font-size: 3.2vw;
+                line-height: 5.333vw;
+              }
+            }
+
+            .body {
+              margin-top: 5.867vw;
+              gap: 4.267vw;
+
+              .td {
+                height: 4.8vw;
+                font-size: 3.2vw;
+                line-height: 4.8vw;
+
+                &::before {
+                  width: 1.6vw;
+                  height: 1.6vw;
+                  margin-right: 3.2vw;
+                }
+
+                i {
+                  margin-right: 2.133vw;
+                }
+
+                .nvidia {
+                  font-size: 2.56vw;
+                }
+
+                .macos {
+                  font-size: 3.733vw;
+                }
+
+                .value {
+                  width: 13.333vw;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .node-points {
+        margin-top: 17.067vw;
+
+        .filters {
+          width: 100%;
+          gap: 0;
+          margin-top: 9.6vw;
+          justify-content: space-between;
+
+          > div {
+            width: 19.467vw;
+            height: 9.067vw;
+            backdrop-filter: blur(4.825vw);
+            border-radius: 5.333vw;
+            font-size: 3.2vw;
+            line-height: 4.8vw;
+          }
+        }
+
+        .device-list {
+          font-size: 3.2vw;
+          margin-top: 9.6vw;
+
+          :global {
+            .ant-list-items {
+              gap: 6.4vw;
+
+              .ant-list-item {
+                width: 40vw;
+                height: 48vw;
+                background: url('../../assets/images/explore/device_item_android_bg.png');
+                background-size: 100% 100%;
+                backdrop-filter: blur(2.667vw);
+                border-radius: 4.267vw;
+                padding-top: 7.467vw;
+
+                &:hover {
+                  background: none;
+                }
+              }
+            }
+          }
+
+          .device-item {
+            .icon {
+              width: 17.067vw;
+              height: 17.067vw;
+              border-radius: 3.2vw;
+
+              .nvidia {
+                font-size: 7.733vw;
+              }
+
+              .macos {
+                font-size: 10.133vw;
+              }
+
+              .cpu {
+                font-size: 12vw;
+              }
+            }
+
+            .name {
+              margin-top: 6.4vw;
+              font-size: 3.2vw;
+              line-height: 4.48vw;
+            }
+
+            .price {
+              margin-top: 1.333vw;
+              font-size: 3.2vw;
+              line-height: 4.48vw;
+            }
+          }
+
+          .load-more {
+            width: 100%;
+            height: 48vw;
+            padding-top: 36.8vw;
+
+            span {
+              font-size: 3.2vw;
+              line-height: 4.8vw;
+            }
+          }
+        }
+      }
+    }
+
+    .points-wrapper {
+      .ranking-wrapper {
+        min-height: 87.2vw;
+        margin-top: 14.133vw;
+
+        .content {
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 6.4vw;
+
+          .ranking-info {
+            width: 100%;
+            height: 87.2vw;
+            padding: 0 9.6vw;
+
+            .title {
+              width: 100%;
+              height: 23.467vw;
+
+              span {
+                font-size: 6.4vw;
+                line-height: 9.6vw;
+                text-shadow: 0vw 0vw 1.923vw rgba(255, 255, 255, 0.1);
+              }
+            }
+
+            .list {
+              margin-top: 5.333vw;
+              gap: 4.267vw;
+
+              > div {
+                gap: 3.467vw;
+
+                img {
+                  width: 6.4vw;
+                  height: 6.4vw;
+                  flex-shrink: 0;
+                }
+
+                span {
+                  font-size: 3.733vw;
+                  line-height: 5.6vw;
+                }
+
+                .total {
+                  min-width: 26.667vw;
+                }
+              }
+
+              .ranking-0 {
+                margin-bottom: 8.533vw;
+
+                img {
+                  width: 10.667vw;
+                  height: 10.667vw;
+                }
+
+                .name {
+                  margin-top: 3.2vw;
+                }
+
+                .total {
+                  font-size: 4.267vw;
+                  line-height: 6.4vw;
+                  margin-top: 1.067vw;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .table-wrapper {
+        margin-top: 17.067vw;
+
+        .header {
+          h1 {
+            display: none;
+          }
+
+          .total {
+            margin: 0 auto;
+            width: 66.667vw;
+            height: 14.4vw;
+            padding-left: 5.867vw;
+            padding-bottom: 2.667vw;
+            background: url('../../assets/images/explore/total_android_bg.png');
+            background-size: 100% 100%;
+
+            &::after {
+              display: none;
+            }
+
+            > div {
+              gap: 3.2vw;
+            }
+
+            img {
+              width: 11.019vw;
+              height: 4.077vw;
+            }
+
+            .name {
+              font-size: 2.667vw;
+              line-height: 4vw;
+              letter-spacing: 0.061vw;
+              text-shadow: 0vw 0vw 1.256vw rgba(255, 255, 255, 0.1);
+            }
+
+            .value {
+              font-size: 5.333vw;
+              line-height: 8vw;
+              text-shadow: 0vw 0vw 1.256vw rgba(255, 255, 255, 0.1);
+            }
+          }
+        }
+
+        .content {
+          top: -2.667vw;
+          height: 115.2vw;
+          padding: 3.2vw 9.6vw;
+          background: url('../../assets/images/explore/table_android_bg.png');
+          background-size: 100% 100%;
+
+          :global {
+            .ant-table-wrapper {
+              .ant-table {
+                font-size: 3.733vw;
+                line-height: 5.227vw;
+
+                .ant-table-container {
+                  .ant-table-content {
+                    overflow: scroll !important;
+
+                    &::-webkit-scrollbar {
+                      width: 100%;
+                      height: 1.067vw;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                      border-radius: 2.667vw;
+                      background: rgba(255, 255, 255, 1);
+                    }
+
+                    &::-webkit-scrollbar-track {
+                      border-radius: 2.667vw;
+                      background: rgba(255, 255, 255, 0.2);
+                    }
+                  }
+                }
+
+                .ant-table-thead > tr > th {
+                  font-size: 3.733vw;
+                  line-height: 5.227vw;
+                }
+
+                .ant-table-tbody {
+                  &::-webkit-scrollbar {
+                    width: 66.667vw;
+                    height: 1.067vw;
+                  }
+
+                  &::-webkit-scrollbar-track {
+                    height: 1.067vw;
+                  }
+
+                  > .ant-table-placeholder {
+                    > .ant-table-cell {
+                      &:hover {
+                        background-color: transparent;
+                      }
+
+                      .ant-empty {
+                        min-height: 91.733vw;
+                      }
+                    }
+                  }
+                }
+
+                .ant-table-thead > tr > th,
+                .ant-table-tbody > tr > td,
+                .ant-table tfoot > tr > th,
+                .ant-table tfoot > tr > td {
+                  padding: 2.667vw 3.2vw;
+                }
+              }
+            }
+          }
+        }
+
+        .pagination-wrapper {
+          width: 100%;
+          margin-top: 5.867vw;
+          height: 8.533vw;
+
+          :global {
+            .ant-pagination {
+              gap: 4.267vw;
+
+              .ant-pagination-prev,
+              .ant-pagination-next,
+              .ant-pagination-item {
+                width: 8.533vw;
+                height: 8.533vw;
+                border-radius: 1.067vw;
+                margin-right: 0;
+              }
+
+              .ant-pagination-next,
+              .ant-pagination-prev {
+                .ant-pagination-item-link {
+                  font-size: 2.667vw;
+                }
+              }
+
+              .ant-pagination-item {
+                a {
+                  font-size: 3.733vw;
+                  line-height: 5.867vw;
+                }
+              }
+
+              .ant-pagination-item-active {
+                a {
+                  font-size: 3.733vw;
+                  line-height: 5.867vw;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

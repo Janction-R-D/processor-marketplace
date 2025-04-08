@@ -1,0 +1,174 @@
+#genesis-layout,
+#purchase-layout {
+  width: 100vw;
+  overflow-x: clip;
+  min-height: 100vh;
+}
+
+.personal-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+
+  > main {
+    flex: 1;
+    padding: 68px 40px 40px;
+    background: #141416;
+    height: 100vh;
+    overflow: auto !important;
+    position: relative;
+  }
+
+  > main.main-no-padding {
+    padding: 0;
+  }
+
+  .android-footer {
+    display: none;
+  }
+
+  .rewards-footer {
+    width: 100vw;
+    padding: 0 1.563vw;
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    position: fixed;
+    bottom: 2.083vw;
+    left: 0;
+    z-index: 5;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: #ffffff4d;
+    }
+
+    > div {
+      width: 27.188vw;
+      min-width: 400px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .logo {
+      img {
+        display: block;
+        width: 136px;
+      }
+    }
+
+    p {
+      width: 100%;
+      text-align: center;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 24px;
+      color: rgba(255, 247, 221, 0.6);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .personal-container {
+    border-radius: 0 0 12px 12px;
+    flex-direction: column;
+    padding-top: 42px;
+    background: linear-gradient(
+      226deg,
+      #192d52 5.03%,
+      #201436 39.86%,
+      #010003 74.68%
+    );
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+
+    > main {
+      width: 100%;
+      background: transparent;
+      padding: 24px 16px;
+      height: auto;
+      overflow: auto;
+    }
+
+    > main.main-no-padding {
+      padding: 0;
+    }
+
+    .rewards-footer {
+      > div {
+        width: 50vw;
+        min-width: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .logo {
+        img {
+          display: block;
+          width: 136px;
+        }
+      }
+
+      p {
+        width: 100%;
+        text-align: center;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(255, 247, 221, 0.6);
+      }
+    }
+
+    .android-footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+      padding: 0 24px;
+      height: 153px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: linear-gradient(
+        104deg,
+        #2571b080 -1.54%,
+        #a83c9980 62.45%,
+        #c7855a80 97.7%
+      );
+
+      .logo {
+        width: 144px;
+        height: 31px;
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+
+        .comp-info {
+          color: #ffffff80;
+          font-family: 'Poppins';
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

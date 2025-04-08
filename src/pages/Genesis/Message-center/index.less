@@ -1,0 +1,500 @@
+.main-container {
+  background: #141416;
+  min-height: 100vh;
+  padding-inline: 22px;
+  padding-bottom: 40px;
+}
+.personal-container {
+  background: #141416;
+  display: flex;
+  gap: 30px;
+  height: auto;
+  min-height: 100%;
+  overflow: auto;
+  @media screen and (max-width: 1024px) {
+    background: linear-gradient(
+      226deg,
+      #192d52 5.03%,
+      #201436 39.86%,
+      #010003 74.68%
+    );
+  }
+}
+.main-header {
+  padding: 10px;
+}
+.filters {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.filters::-webkit-scrollbar {
+  display: none; /* hide scroll bar */
+}
+.activity-filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  :global {
+    .ant-radio-group {
+      .ant-radio-button-wrapper {
+        border-color: transparent;
+        background: #1b1b1c;
+        padding: 18px 28px !important;
+        display: flex;
+        align-items: center;
+        > span:not(.ant-radio-button) {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 20px;
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        .ant-radio-button-checked {
+          display: none;
+        }
+      }
+
+      .ant-radio-button-wrapper::before {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .ant-radio-button-wrapper-checked {
+        > span:not(.ant-radio-button) {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+
+      .ant-radio-button-wrapper:first-child {
+        border-radius: 41px 0 0 41px;
+      }
+
+      .ant-radio-button-wrapper:last-child {
+        border-radius: 0 41px 41px 0;
+      }
+
+      .ant-radio-button-wrapper-checked:not(
+          .ant-radio-button-wrapper-disabled
+        ) {
+        background: #2f2f31;
+      }
+    }
+
+    .ant-input-affix-wrapper {
+      border-radius: 61px;
+      outline: none;
+      padding-right: 16px;
+      background-color: #2e2e30;
+      max-width: 300px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 61px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      /* identical to box height, or 167% */
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+      border: none;
+    }
+  }
+}
+.activity-filter {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  margin: 16px 0 32px;
+  > label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .activity-range {
+      border-radius: 8px;
+      background: #363636;
+      border: none;
+    }
+  }
+}
+.card-messages {
+  border-radius: 24px;
+  background-color: #242426;
+  margin-top: 22px;
+  margin-bottom: 40px;
+  height: auto;
+}
+.table {
+  :global {
+    .ant-table-container table {
+      .ant-table-thead {
+        th {
+          background: #1c1c1d !important;
+          border-bottom: 1px solid #2e2e30 !important;
+        }
+
+        .table-header {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          > div {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            > button {
+              border-radius: 4px;
+              border-color: #2f2f31;
+            }
+          }
+
+          .isCheckSome {
+            :global {
+              /* Personalizar el checkbox */
+              .ant-checkbox-wrapper {
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                color: #333; /* Color del texto */
+              }
+
+              .ant-checkbox {
+                .ant-checkbox-inner {
+                  width: 18px; /* Tamaño del checkbox */
+                  height: 18px;
+                  border: 2px solid #2f2f31; /* Color del borde */
+                  border-radius: 4px; /* Cambiar forma (redondeada) */
+
+                  /* Estilo cuando está seleccionado */
+                  &::after {
+                    content: ''; /* Asegura que el check sea visible */
+                    border: 2px solid #fff;
+                    // background-color: #4caf50; /* Color de fondo al estar seleccionado */
+                  }
+                }
+
+                /* Estilo del icono cuando el checkbox está marcado */
+                &.ant-checkbox-checked {
+                  // .ant-checkbox-inner {
+                  //   background-color: #4caf50;
+                  //   border-color: #4caf50;
+                  // }
+
+                  /* Icono personalizado */
+                  .ant-checkbox-inner::after {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 3px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 2px 0px 0;
+                    transform: translate(-50%, -50%) rotate(90deg);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .ant-table-tbody {
+        tr {
+          td {
+            border-bottom: 1px solid #2e2e30 !important;
+          }
+
+          .tipo {
+            width: 100px;
+            display: flex;
+
+            gap: 4px;
+            font-size: 0.8rem;
+            color: #fff;
+            font-weight: 500;
+          }
+          .descripcion {
+            width: 650px;
+            text-wrap: wrap;
+            position: relative;
+          }
+          .readed-sms {
+            font-weight: bold;
+            color: #fff;
+          }
+          .actions {
+            min-width: 200px;
+            display: flex;
+            justify-content: end;
+            p {
+              display: flex;
+              align-items: center;
+              transition: all 200ms ease;
+            }
+            .buttons {
+              transition: all 200ms ease;
+              display: none;
+              gap: 12px;
+              align-items: center;
+
+              > button {
+                padding: 4px 3px;
+              }
+            }
+          }
+
+          .ellipsis {
+            text-overflow: ellipsis;
+            text-wrap: nowrap;
+          }
+        }
+        tr:hover {
+          .actions {
+            p {
+              display: none;
+            }
+            .buttons {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .main-container {
+    padding-inline: 0px;
+    background: transparent;
+    padding-top: 24px;
+  }
+  .personal-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 580px) {
+  .filters {
+    box-shadow: inset -10px 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .activity-filter {
+    label {
+      p {
+        text-wrap: nowrap;
+      }
+      .activity-range {
+        background: transparent;
+      }
+    }
+  }
+  .card-messages {
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+  .table {
+    :global {
+      .ant-table-container table {
+        .ant-table-thead {
+          th {
+            background: #1c1c1d !important;
+            border-bottom: 1px solid #2e2e30 !important;
+          }
+          th:last-child {
+            display: none;
+          }
+          th:nth-child(2) {
+            display: none;
+          }
+          .table-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            > div {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+
+              > button {
+                border-radius: 4px;
+                border-color: #2f2f31;
+              }
+            }
+          }
+        }
+        .ant-table-tbody {
+          background: #1c1c1d !important;
+          tr {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            flex-direction: column;
+            width: 100%;
+            border-bottom: 1px solid #2e2e30 !important;
+            td {
+              height: 45px !important;
+              border-bottom: none !important;
+            }
+            td:last-child {
+              order: -1;
+
+              position: absolute;
+              top: 0;
+              right: 10px;
+              z-index: 10;
+              height: 50px;
+              width: 20ch;
+              padding: 4px;
+            }
+            .tipo {
+              width: 100px;
+              display: flex;
+              text-transform: capitalize;
+              gap: 4px;
+              font-size: 0.65rem;
+              color: #fff;
+              font-weight: 500;
+            }
+            .descripcion {
+              width: calc(60vw - 40px);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-wrap: nowrap;
+              position: relative;
+            }
+            .readed-sms {
+              font-weight: bold;
+              color: #fff;
+            }
+            .actions {
+              min-width: 100px;
+              display: flex;
+              gap: 15px;
+              flex-direction: column-reverse;
+              justify-content: end;
+              overflow: hidden;
+              p {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                transition: all 200ms ease;
+              }
+              .buttons {
+                transition: all 200ms ease;
+                display: flex;
+                justify-content: end;
+                gap: 4px;
+                align-items: start;
+
+                > button {
+                  padding: 4px 8px;
+                  font-size: 0.7rem;
+                  font-weight: bold;
+                  color: rgb(93, 96, 250);
+                  border: none;
+                }
+                > button:first-child {
+                  border-right: 1px solid #363636;
+                }
+              }
+            }
+
+            .ellipsis {
+              text-overflow: ellipsis;
+              text-wrap: nowrap;
+            }
+          }
+          tr:hover {
+            .actions {
+              p {
+                display: none;
+              }
+              .buttons {
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // .activity-filter-container {
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: 12px;
+  //   :global {
+  //     .ant-radio-group {
+  //       .ant-radio-button-wrapper {
+  //         border-color: transparent;
+  //         background: #1b1b1c;
+  //         padding: 8px 12px !important;
+  //         display: flex;
+  //         align-items: center;
+  //         > span:not(.ant-radio-button) {
+  //           font-family: 'Poppins';
+  //           font-style: normal;
+  //           font-weight: 400;
+  //           font-size: 8px;
+  //           line-height: 20px;
+  //           color: rgba(255, 255, 255, 0.6);
+  //         }
+
+  //         .ant-radio-button-checked {
+  //           display: none;
+  //         }
+  //       }
+
+  //       .ant-radio-button-wrapper::before {
+  //         background-color: rgba(255, 255, 255, 0.1);
+  //       }
+
+  //       .ant-radio-button-wrapper-checked {
+  //         > span:not(.ant-radio-button) {
+  //           color: rgba(255, 255, 255, 0.9);
+  //         }
+  //       }
+
+  //       .ant-radio-button-wrapper:first-child {
+  //         border-radius: 41px 0 0 41px;
+  //       }
+
+  //       .ant-radio-button-wrapper:last-child {
+  //         border-radius: 0 41px 41px 0;
+  //       }
+
+  //       .ant-radio-button-wrapper-checked:not(
+  //           .ant-radio-button-wrapper-disabled
+  //         ) {
+  //         background: #2f2f31;
+  //       }
+  //     }
+
+  //     .ant-input-affix-wrapper {
+  //       border-radius: 61px;
+  //       outline: none;
+  //       padding-right: 16px;
+  //       background-color: #2e2e30;
+  //       max-width: 300px;
+  //       height: 32px;
+  //       background: rgba(255, 255, 255, 0.05);
+  //       border-radius: 61px;
+  //       font-family: 'Poppins';
+  //       font-style: normal;
+  //       font-weight: 400;
+  //       font-size: 12px;
+  //       line-height: 20px;
+  //       /* identical to box height, or 167% */
+  //       text-align: center;
+  //       color: rgba(255, 255, 255, 0.4);
+  //       border: none;
+  //     }
+  //   }
+  // }
+}

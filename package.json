@@ -1,0 +1,74 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "cross-env UMI_ENV=dev NODE_OPTIONS=--openssl-legacy-provider umi dev",
+    "build": "cross-env UMI_ENV=prod NODE_OPTIONS=--openssl-legacy-provider umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.5.1",
+    "@ant-design/pro-components": "^2.7.19",
+    "@ant-design/pro-layout": "^6.5.0",
+    "@passwordless-id/webauthn": "^2.1.2",
+    "@rainbow-me/rainbowkit": "^2.1.2",
+    "@tanstack/react-query": "^5.28.4",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "animate.css": "^4.1.1",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.11.13",
+    "echarts": "^5.5.0",
+    "echarts-for-react": "^3.0.2",
+    "ethers": "5",
+    "framer-motion": "^12.5.0",
+    "hover.css": "^2.3.2",
+    "js-base64": "^3.7.7",
+    "katex": "^0.16.11",
+    "lodash": "^4.17.21",
+    "numeral": "^2.0.6",
+    "papaparse": "^5.4.1",
+    "rc-bullets": "^1.5.16",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-joyride": "^2.9.3",
+    "react-lottie": "^1.2.4",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.6.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "remark-toc": "^9.0.0",
+    "siwe": "^2.3.2",
+    "swiper": "^11.1.15",
+    "umi": "^3.5.41",
+    "unified": "^11.0.5",
+    "viem": "2.9.31",
+    "wagmi": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.41",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  }
+}
